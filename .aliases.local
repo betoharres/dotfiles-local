@@ -1,0 +1,2 @@
+alias la='ls -a'
+alias laptopUpdate='bash mac 2>&1 | tee ~/laptop.log'

@@ -1,0 +1,64 @@
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+let g:airline_powerline_fonts = 1
+let g:gist_open_browser_after_post = 1
+let g:nerdtree_tabs_open_on_console_startup = 1
+let g:nerdtree_tabs_smart_startup_focus = 1
+set timeout timeoutlen=1000 ttimeoutlen=100 "Read keys faster
+set laststatus=2 "Always powrline enabled
+set cursorline
+
+noremap <Leader>w :w<CR>
+nnoremap <Leader>q :q<CR>
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+
+nmap <Leader><Tab> :tabnew<CR>
+nmap <Leader><S-W> :tabclose<CR>
+nmap <left> :tabprevious<CR>
+nmap <right> :tabnext<CR>
+nmap <Leader>1 1gt
+nmap <Leader>2 2gt
+nmap <Leader>3 3gt
+nmap <Leader>4 4gt
+nmap <Leader>5 5gt
+nmap <Leader>6 6gt
+nmap <Leader>7 7gt
+nmap <Leader>8 8gt
+nmap <Leader>9 9gt
+nmap <Leader>0 0gt
+
+" Break line in normal mode!
+nnoremap <NL> i<CR><ESC>
+
+" NERDTree
+nnoremap <C-n> :NERDTreeToggle<CR>
+
+"Centering
+nmap n nzz
+nmap N Nzz
+nmap } }zz
+nmap { {zz
+nno <up> ddkP
+nno <down> ddp
+
+" Expand Region
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+" Ag
+nnoremap <leader>a :Ag
+
+" Gundo
+nnoremap <F5> :GundoToggle<CR>
+
+" ABBR
+iabbr flase false
+iabbr ture true
+iabbr ned end
+iabbr dfe def
+iabbr nwe new
+iabbr uesr user
+iabbr calss class
+iabbr myemail albertohrocha@gmail.com
