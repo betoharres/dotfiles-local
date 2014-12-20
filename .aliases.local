@@ -1,5 +1,5 @@
 alias la='ls -a'
-alias laptopUpdate='bash mac 2>&1 | tee ~/laptop.log'
+alias laptopUpdate='bash ~/mac 2>&1 | tee ~/laptop.log'
 alias gf='git fetch && g'
 alias gc='git commit -m'
 alias ga='git add -A'
