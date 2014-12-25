@@ -35,4 +35,4 @@ function current_repository() {
   echo $(git remote -v | cut -d':' -f 2)
 }
 source ~/dotfiles-local/zsh-git-prompt/zshrc.sh
-export PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info)$(git_super_status) %# '
+export PS1='${SSH_CONNECTION+"%{$fg_bold[blue]%}%n@%m:"}%{$fg_bold[green]%}%c%{$reset_color%}$(git_super_status) %# '
