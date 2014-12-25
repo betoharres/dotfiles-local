@@ -9,4 +9,4 @@ Follow these steps: <br />
 
 ## Custom changes
 * ``$ gc Blah blah blah`` alias to: ``git commit -m "Blah blah blah"``( use
-alias ``gcm`` to non letters characters).
+alias ``gcm ""`` to use non letters characters).
