@@ -7,5 +7,5 @@ Follow these steps: <br />
 3. run: ``$ git clone https://github.com/betoharres/dotfiles-local.git ~/``<br />
 4. and: ``$ find ~/dotfiles-local -name "*.local" -exec bash -c 'ln -s $0 ~/' {} \;``<br />
 
-# Custom changes
+## Custom changes
 * ``$ gc $GIT_COMMIT_TEXT `` alias to: ``git commit -m "your message here"``
