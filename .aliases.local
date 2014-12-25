@@ -1,3 +1,4 @@
+alias dot='~/dotfiles-local/'
 alias la='ls -faF'
 alias laptopUpdate='bash ~/mac 2>&1 | tee ~/laptop.log'
 alias rc='rails console'
