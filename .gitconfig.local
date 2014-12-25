@@ -4,4 +4,3 @@
   colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
 [user]
   name = Alberto Harres Rocha
-  email = albertohrocha@gmail.com

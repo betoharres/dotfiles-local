@@ -6,3 +6,6 @@ Follow these steps: <br />
 2. and here: [thoughtbot/dotfiles](https://github.com/thoughtbot/dotfiles)<br />
 3. run: ``$ git clone https://github.com/betoharres/dotfiles-local.git ~/``<br />
 4. and: ``$ find ~/dotfiles-local -name "*.local" -exec bash -c 'ln -s $0 ~/' {} \;``<br />
+
+# Custom changes
+* ``$ gc $GIT_COMMIT_TEXT `` alias to: ``git commit -m "your message here"``

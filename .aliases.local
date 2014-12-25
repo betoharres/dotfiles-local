@@ -1,4 +1,4 @@
-alias la='ls -fa'
+alias la='ls -faF'
 alias laptopUpdate='bash ~/mac 2>&1 | tee ~/laptop.log'
 alias rc='rails console'
 alias rs='rails server'

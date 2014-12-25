@@ -36,6 +36,10 @@ nmap <Leader>0 0gt
 " NERDTree
 nnoremap <C-n> :NERDTreeToggle<CR>
 
+"SnipMate
+imap <C-Enter> <Plug>snipMateNextOrTrigger
+smap <C-Enter> <Plug>snipMateNextOrTrigger
+
 "Centering
 nmap n nzz
 nmap N Nzz

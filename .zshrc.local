@@ -6,10 +6,20 @@ export PATH="$HOME/.bin:$PATH"
 export PATH="$PATH:/usr/local/lib/node_modules"
 source $(brew --prefix nvm)/nvm.sh
 
-function gc()
-{
-  git commit -m "$*";
-}
+# Changes VI mode to CRTL-X instead of CTRL-F
+bindkey "^J" vi-cmd-mode
+
+function gheroku() {git diff && git add -A && git commit -m "$*" && git push heroku master;}
+function gc() {git commit -m "$*";}
+function c() { cd ~/code/$1; }
+function h() { cd ~/$1; }
+function top10cmd() {print -l -- ${(o)history%% *} | uniq -c | sort -nr | head -n 10;}
+# YADR
+# (f)ind by (n)ame
+# usage: fn foo
+# to find all files containing 'foo' in the name
+function fn() { ls **/*$1* }
+
 # Will return the current branch name
 # Usage example: git pull origin $(current_branch)
 #
@@ -24,3 +34,5 @@ function current_repository() {
   ref=$(git rev-parse --short HEAD 2> /dev/null) || return
   echo $(git remote -v | cut -d':' -f 2)
 }
+source ~/zsh-git-prompt-master/zshrc.sh
+export PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info)$(git_super_status) %# '
