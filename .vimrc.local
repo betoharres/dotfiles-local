@@ -35,10 +35,11 @@ nmap <Leader>0 0gt
 
 " NERDTree
 nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-m> :NERDTreeToggle<CR>
 
 "SnipMate
-imap <C-Enter> <Plug>snipMateNextOrTrigger
-smap <C-Enter> <Plug>snipMateNextOrTrigger
+imap <C-x> <Plug>snipMateNextOrTrigger
+" smap <C-x> <Plug>snipMateNextOrTrigger
 
 "Centering
 nmap n nzz
@@ -47,8 +48,10 @@ nmap } }zz
 nmap { {zz
 nno <up> ddkP
 nno <down> ddp
-" When you just wanna paste something after a comma
-nno L a <ESC>
+
+no L $
+no H 0
+
 " Expand Region
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
@@ -59,6 +62,9 @@ nnoremap <leader>a :Ag
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
 
+" emmet
+nmap <leader>f <C-y>,
+
 " ABBR
 iabbr flase false
 iabbr ture true
@@ -68,3 +74,36 @@ iabbr nwe new
 iabbr uesr user
 iabbr calss class
 iabbr myemail albertohrocha@gmail.com
+
+let g:syntastic_html_tidy_blocklevel_tags = [
+  \'ion-checkbox',
+  \'ion-content',
+  \'ion-delete-button',
+  \'ion-footer-bar',
+  \'ion-header-bar',
+  \'ion-infinite-scroll',
+  \'ion-item',
+  \'ion-list',
+  \'ion-modal-view',
+  \'ion-nav-back-button',
+  \'ion-nav-bar',
+  \'ion-nav-buttons',
+  \'ion-nav-view',
+  \'ion-option-button',
+  \'ion-pane',
+  \'ion-popover-view',
+  \'ion-radio',
+  \'ion-refresher',
+  \'ion-reorder-button',
+  \'ion-scroll',
+  \'ion-side-menu',
+  \'ion-side-menus',
+  \'ion-side-menu-content',
+  \'ion-slide',
+  \'ion-slide-box',
+  \'ion-tab',
+  \'ion-tabs',
+  \'ion-toggle',
+  \'ion-view',
+  \'on-release',
+  \]

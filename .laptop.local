@@ -1,15 +1,18 @@
 #!/bin/sh
+brew unlink brew-cask
 
 brew tap caskroom/cask
 brew install brew-cask
 
+brew link brew-cask
+
+brew cask install java
 brew cask install dropbox
 brew cask install google-chrome
 brew cask install rdio
 
 gem install suspenders
 gem install parity
-gem install rails
 
 brew_install_or_upgrade 'watch'
 brew reinstall openssl
