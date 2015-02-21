@@ -15,10 +15,14 @@ vmap <Leader>y "+y
 vmap <Leader>d "+d
 nmap <Leader>p "+p
 
+" Switch between two last files - remaping this because I use easymotion
+nnoremap <leader>b <c-^>
+
 nmap <Leader><Tab> :tabnew<CR>
 nmap <Leader><S-W> :tabclose<CR>
 nmap <left> :tabprevious<CR>
 nmap <right> :tabnext<CR>
+
 nmap <Leader>1 1gt
 nmap <Leader>2 2gt
 nmap <Leader>3 3gt
@@ -35,7 +39,6 @@ nmap <Leader>0 0gt
 
 " NERDTree
 nnoremap <C-n> :NERDTreeToggle<CR>
-nnoremap <C-m> :NERDTreeToggle<CR>
 
 "SnipMate
 imap <C-x> <Plug>snipMateNextOrTrigger
@@ -46,9 +49,12 @@ nmap n nzz
 nmap N Nzz
 nmap } }zz
 nmap { {zz
+
+" moving arrows to move lines
 nno <up> ddkP
 nno <down> ddp
 
+" makes your life easier
 no L $
 no H 0
 
