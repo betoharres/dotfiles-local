@@ -1,3 +1,4 @@
+alias mongodbstart='mongod --dbpath ~/data/db'
 alias phone='cordova emulate ios --target="iPhone-4s"'
 alias tmp='~/../../Applications/TemperatureMonitor.app/Contents/MacOS/tempmonitor -c -l -a'
 alias dot='~/dotfiles-local/'
