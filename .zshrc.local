@@ -12,7 +12,8 @@ source $(brew --prefix nvm)/nvm.sh
 bindkey "^x" vi-cmd-mode
 
 function gheroku() {git add -A && git commit -m "$*" && git push heroku master;}
-function gc() {git commit -m "$*";}
+function gc() {git add -A && git commit -m "$*";}
+function gcp() {git add -A && git commit -m "$*" && git push;}
 function ch() { cd ~/Dropbox/Apps/Heroku/$1; }
 function c() { cd ~/Dropbox/code/$1; }
 function h() { cd ~/$1; }
