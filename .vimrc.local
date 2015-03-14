@@ -39,6 +39,7 @@ nmap <Leader>0 0gt
 
 " NERDTree
 nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 "SnipMate
 imap <C-x> <Plug>snipMateNextOrTrigger
