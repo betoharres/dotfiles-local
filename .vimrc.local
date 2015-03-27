@@ -1,7 +1,7 @@
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 let g:airline_powerline_fonts = 1
-" let g:gist_open_browser_after_post = 1
+let g:gist_open_browser_after_post = 1
 let g:gist_clip_command = 'pbcopy'
 let g:nerdtree_tabs_open_on_console_startup = 1
 let g:nerdtree_tabs_smart_startup_focus = 1
@@ -28,6 +28,7 @@ inoremap jk <esc>
 inoremap kj <esc>
 nnoremap J 18j
 nnoremap K 18k
+nnoremap <C-J> J
 ""
 
 nmap <Leader><Tab> :tabnew<CR>
@@ -36,10 +37,10 @@ nmap <C-h> :tabprevious<CR>
 nmap <C-l> :tabnext<CR>
 
 " Quicker window movement
-nnoremap <C-J> <C-w>j
-nnoremap <C-K> <C-w>k
-nnoremap <C-H> <C-w>h
-nnoremap <C-L> <C-w>l
+" nnoremap <C-J> <C-w>j
+" nnoremap <C-K> <C-w>k
+" nnoremap <C-H> <C-w>h
+" nnoremap <C-L> <C-w>l
 
 nmap <Leader>1 1gt
 nmap <Leader>2 2gt
@@ -87,6 +88,7 @@ nmap <leader>f <C-y>,
 iabbr flase false
 iabbr ture true
 iabbr ned end
+iabbr edn end
 iabbr dfe def
 iabbr nwe new
 iabbr uesr user
