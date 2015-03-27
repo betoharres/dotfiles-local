@@ -1,3 +1,4 @@
+alias betty="/Users/albertorocha/Dropbox/code/betty/main.rb"
 alias mongodbstart='mongod --dbpath ~/data/db'
 alias phone='cordova emulate ios --target="iPhone-4s"'
 alias temp='~/../../Applications/TemperatureMonitor.app/Contents/MacOS/tempmonitor -c -l -a'

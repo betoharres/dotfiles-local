@@ -1,13 +1,16 @@
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 let g:airline_powerline_fonts = 1
-let g:gist_open_browser_after_post = 1
+" let g:gist_open_browser_after_post = 1
+let g:gist_clip_command = 'pbcopy'
 let g:nerdtree_tabs_open_on_console_startup = 1
 let g:nerdtree_tabs_smart_startup_focus = 1
 set timeout timeoutlen=1000 ttimeoutlen=100 "Read keys faster
 set laststatus=2 "Always powrline enabled
 set cursorline
 let g:airline_theme='bubblegum'
+
+nnore ; :
 
 noremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
@@ -20,8 +23,8 @@ nnoremap <leader>b <c-^>
 
 nmap <Leader><Tab> :tabnew<CR>
 nmap <Leader><S-W> :tabclose<CR>
-nmap <left> :tabprevious<CR>
-nmap <right> :tabnext<CR>
+nmap <C-h> :tabprevious<CR>
+nmap <C-l> :tabnext<CR>
 
 nmap <Leader>1 1gt
 nmap <Leader>2 2gt
