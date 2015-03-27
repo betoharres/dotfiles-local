@@ -1,0 +1,42 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+PIPE	zsh-git-prompt/gitstatus.py	/^from subprocess import Popen, PIPE$/;"	i
+Popen	zsh-git-prompt/gitstatus.py	/^from subprocess import Popen, PIPE$/;"	i
+ahead	zsh-git-prompt/gitstatus.py	/^		ahead = len([x for x in behead if x[0]=='>'])$/;"	v
+behead	zsh-git-prompt/gitstatus.py	/^		behead = revlist.decode("utf-8").splitlines()$/;"	v
+behind	zsh-git-prompt/gitstatus.py	/^		behind = len(behead) - ahead$/;"	v
+branch	zsh-git-prompt/gitstatus.py	/^	branch = prehash + Popen(['git','rev-parse','--short','HEAD'], stdout=PIPE).communicate()[0].decode("utf-8")[:-1]$/;"	v
+branch	zsh-git-prompt/gitstatus.py	/^branch = branch.decode("utf-8").strip()[11:]$/;"	v
+changed	zsh-git-prompt/gitstatus.py	/^changed = str(nb_changed)$/;"	v
+changed_files	zsh-git-prompt/gitstatus.py	/^changed_files = [namestat[0] for namestat in res.decode("utf-8").splitlines()]$/;"	v
+chpwd_update_git_vars	zsh-git-prompt/zshrc.sh	/^function chpwd_update_git_vars() {$/;"	f
+conflicts	zsh-git-prompt/gitstatus.py	/^conflicts = str(nb_U)$/;"	v
+err_string	zsh-git-prompt/gitstatus.py	/^err_string = err.decode('utf-8')$/;"	v
+error_string	zsh-git-prompt/gitstatus.py	/^error_string = error.decode('utf-8')$/;"	v
+git_super_status	zsh-git-prompt/zshrc.sh	/^git_super_status() {$/;"	f
+gitsym	zsh-git-prompt/gitstatus.py	/^gitsym = Popen(['git', 'symbolic-ref', 'HEAD'], stdout=PIPE, stderr=PIPE)$/;"	v
+merge_name	zsh-git-prompt/gitstatus.py	/^		merge_name = Popen(['git','config','branch.%s.merge' % branch], stdout=PIPE).communicate()[0].decode("utf-8").strip()$/;"	v
+nb_U	zsh-git-prompt/gitstatus.py	/^nb_U = staged_files.count('U')$/;"	v
+nb_changed	zsh-git-prompt/gitstatus.py	/^nb_changed = len(changed_files) - changed_files.count('U')$/;"	v
+nb_staged	zsh-git-prompt/gitstatus.py	/^nb_staged = len(staged_files) - nb_U$/;"	v
+nb_untracked	zsh-git-prompt/gitstatus.py	/^nb_untracked = len([0 for status in Popen(['git','status','--porcelain',],stdout=PIPE).communicate()[0].decode("utf-8").splitlines() if status.startswith('??')])$/;"	v
+out	zsh-git-prompt/gitstatus.py	/^out = '\\n'.join([$/;"	v
+precmd_update_git_vars	zsh-git-prompt/zshrc.sh	/^function precmd_update_git_vars() {$/;"	f
+preexec_update_git_vars	zsh-git-prompt/zshrc.sh	/^function preexec_update_git_vars() {$/;"	f
+prehash	zsh-git-prompt/gitstatus.py	/^prehash = ':'$/;"	v
+print_function	zsh-git-prompt/gitstatus.py	/^from __future__ import print_function$/;"	i
+remote_name	zsh-git-prompt/gitstatus.py	/^	remote_name = Popen(['git','config','branch.%s.remote' % branch], stdout=PIPE).communicate()[0].decode("utf-8").strip()$/;"	v
+remote_ref	zsh-git-prompt/gitstatus.py	/^			remote_ref = 'refs\/remotes\/%s\/%s' % (remote_name, merge_name[11:])$/;"	v
+remote_ref	zsh-git-prompt/gitstatus.py	/^			remote_ref = merge_name$/;"	v
+revgit	zsh-git-prompt/gitstatus.py	/^		revgit = Popen(['git', 'rev-list', '--left-right', '%s...HEAD' % remote_ref],stdout=PIPE, stderr=PIPE)$/;"	v
+revlist	zsh-git-prompt/gitstatus.py	/^			revlist = Popen(['git', 'rev-list', '--left-right', '%s...HEAD' % merge_name],stdout=PIPE, stderr=PIPE).communicate()[0]$/;"	v
+revlist	zsh-git-prompt/gitstatus.py	/^		revlist = revgit.communicate()[0]$/;"	v
+staged	zsh-git-prompt/gitstatus.py	/^staged = str(nb_staged)$/;"	v
+staged_files	zsh-git-prompt/gitstatus.py	/^staged_files = [namestat[0] for namestat in Popen(['git','diff', '--staged','--name-status'], stdout=PIPE).communicate()[0].splitlines()]$/;"	v
+sys	zsh-git-prompt/gitstatus.py	/^import sys$/;"	i
+untracked	zsh-git-prompt/gitstatus.py	/^untracked = str(nb_untracked)$/;"	v
+update_current_git_vars	zsh-git-prompt/zshrc.sh	/^function update_current_git_vars() {$/;"	f

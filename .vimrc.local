@@ -26,9 +26,9 @@ nnoremap <leader>b <c-^>
 " experimental
 inoremap jk <esc>
 inoremap kj <esc>
-
-nnoremap J 10jzz
-nnoremap K 10kzz
+nnoremap J 18j
+nnoremap K 18k
+""
 
 nmap <Leader><Tab> :tabnew<CR>
 nmap <Leader><S-W> :tabclose<CR>
@@ -62,7 +62,7 @@ nno <down> ddp
 
 " makes your life easier
 no L $
-no H 0
+no H _
 
 " Expand Region
 vmap v <Plug>(expand_region_expand)
