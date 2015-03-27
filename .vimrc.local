@@ -72,7 +72,7 @@ nno <up> ddkP
 nno <down> ddp
 
 " makes your life easier
-no L $
+no L $h
 no H _
 
 " Expand Region
