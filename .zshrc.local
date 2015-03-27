@@ -20,6 +20,18 @@ function c() { cd ~/Dropbox/code/$1; }
 function h() { cd ~/$1; }
 function top10cmd() {print -l -- ${(o)history%% *} | uniq -c | sort -nr | head -n 10;}
 
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+
 # YADR
 # (f)ind by (n)ame
 # usage: fn foo

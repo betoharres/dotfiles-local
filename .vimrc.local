@@ -57,6 +57,10 @@ nmap <Leader>0 0gt
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
+" ctags
+map <Leader>ct :!ctags -R --exclude=.git --exclude=log *<CR>
+set tags=./tags;
+
 "Centering
 nmap n nzz
 nmap N Nzz
