@@ -35,6 +35,12 @@ nmap <Leader><S-W> :tabclose<CR>
 nmap <C-h> :tabprevious<CR>
 nmap <C-l> :tabnext<CR>
 
+" Quicker window movement
+nnoremap <C-J> <C-w>j
+nnoremap <C-K> <C-w>k
+nnoremap <C-H> <C-w>h
+nnoremap <C-L> <C-w>l
+
 nmap <Leader>1 1gt
 nmap <Leader>2 2gt
 nmap <Leader>3 3gt
