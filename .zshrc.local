@@ -12,7 +12,8 @@ source $(brew --prefix nvm)/nvm.sh
 bindkey "^x" vi-cmd-mode
 
 function gheroku() {git add -A && git commit -m "$*" && git push heroku master;}
-function gc() {git add -A && git commit -m "$*";}
+function gc() {git commit -m "$*";}
+function gca() {git add -A && git commit -m "$*";}
 function rgc() {git commit --amend -m "$*";}
 function gcp() {git add -A && git commit -m "$*" && git push;}
 function grr() {spring rake routes | grep  "$*";}
