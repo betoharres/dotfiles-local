@@ -12,6 +12,7 @@ let g:airline_theme='bubblegum'
 
 " Life saver
 nnore ; :
+vnore ; :
 
 " Too old for this shit
 noremap <Leader>w :w<CR>
@@ -26,21 +27,30 @@ nnoremap <leader>b <c-^>
 " experimental
 inoremap jk <esc>
 inoremap kj <esc>
-nnoremap J 18j
-nnoremap K 18k
+
+nmap J 18j
+vmap J 18j
+nmap K 18k
+vmap K 18k
+
 nnoremap <C-J> J
+
+" moving arrows to move lines
+"Up
+nno <C-K> ddkP
+"Down
+nno <C-J> ddp
+
+nnoremap <up> <C-w>k
+nnoremap <down> <C-w>j
+nnoremap <left> <C-w>h
+nnoremap <right> <C-w>l
 ""
 
 nmap <Leader><Tab> :tabnew<CR>
 nmap <Leader><S-W> :tabclose<CR>
 nmap <C-h> :tabprevious<CR>
 nmap <C-l> :tabnext<CR>
-
-" Quicker window movement
-" nnoremap <C-J> <C-w>j
-" nnoremap <C-K> <C-w>k
-" nnoremap <C-H> <C-w>h
-" nnoremap <C-L> <C-w>l
 
 nmap <Leader>1 1gt
 nmap <Leader>2 2gt
@@ -60,6 +70,8 @@ nnoremap <C-f> :NERDTreeFind<CR>
 " ctags
 map <Leader>ct :!ctags -R --exclude=.git --exclude=log *<CR>
 set tags=./tags;
+nnoremap <leader>g :CtrlPTag<cr>
+nnoremap <silent> <S-Tab> :TagbarToggle<CR>
 
 "Centering
 nmap n nzz
@@ -67,9 +79,6 @@ nmap N Nzz
 nmap } }zz
 nmap { {zz
 
-" moving arrows to move lines
-nno <up> ddkP
-nno <down> ddp
 
 " makes your life easier
 no L $
