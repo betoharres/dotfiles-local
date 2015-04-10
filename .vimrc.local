@@ -70,7 +70,7 @@ nnoremap <C-f> :NERDTreeFind<CR>
 " ctags
 map <Leader>ct :!ctags -R --exclude=.git --exclude=log *<CR>
 set tags=./tags;
-nnoremap <leader>g :CtrlPTag<cr>
+nnoremap <leader>j :CtrlPTag<cr>
 nnoremap <silent> <S-Tab> :TagbarToggle<CR>
 
 "Centering
