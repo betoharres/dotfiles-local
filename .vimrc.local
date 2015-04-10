@@ -19,6 +19,7 @@ nmap <leader>gs :Gstatus<CR>
 nmap <leader>gd :Gdiff<CR>
 nmap <leader>ga :Gwrite<CR>
 nmap <leader>gc :Gcommit<CR>
+nmap <leader>gb :Gpush<CR>
 nmap <leader>gb :Gblame<CR>
 
 " Too old for this shit
