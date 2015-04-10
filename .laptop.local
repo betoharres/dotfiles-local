@@ -9,10 +9,9 @@ brew link brew-cask
 brew cask install java
 brew cask install dropbox
 brew cask install google-chrome
-brew cask install rdio
 
 # gem install suspenders
-gem install parity
+# gem install parity
 
 brew_install_or_upgrade 'watch'
 brew reinstall openssl
