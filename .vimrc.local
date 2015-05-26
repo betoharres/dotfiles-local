@@ -14,13 +14,19 @@ let g:airline_theme='bubblegum'
 nnore ; :
 vnore ; :
 
+"switch panes
+nmap , <C-W><C-W>
+nmap <leader>f <C-w>_<C-w><bar>
+nmap <leader>F <C-w>=
+
 "Fugitive
 nmap <leader>gs :Gstatus<CR>
 nmap <leader>gd :Gdiff<CR>
 nmap <leader>ga :Gwrite<CR>
-nmap <leader>gc :Gcommit<CR>
+nmap <leader>gc :Gcommit -v<CR>
 nmap <leader>gp :Gpush<CR>
 nmap <leader>gb :Gblame<CR>
+nmap <leader>gv :Gvsplit<CR>
 
 " Too old for this shit
 noremap <Leader>w :w<CR>
@@ -35,7 +41,7 @@ nnoremap <leader>b <c-^>
 " experimental
 inoremap jk <esc>
 inoremap kj <esc>
-
+nmap <C-a> ggVG
 nmap J 18j
 vmap J 18j
 nmap K 18k
@@ -56,9 +62,8 @@ nnoremap <right> <C-w>l
 ""
 
 nmap <Leader><Tab> :tabnew<CR>
-nmap <Leader><S-W> :tabclose<CR>
-nmap <C-h> :tabprevious<CR>
-nmap <C-l> :tabnext<CR>
+nmap M :tabprevious<CR>
+nmap m :tabnext<CR>
 
 nmap <Leader>1 1gt
 nmap <Leader>2 2gt
@@ -79,7 +84,7 @@ nnoremap <C-f> :NERDTreeFind<CR>
 map <Leader>ct :!ctags -R --exclude=.git --exclude=log *<CR>
 set tags=./tags;
 nnoremap <leader>j :CtrlPTag<cr>
-nnoremap <silent> <S-Tab> :TagbarToggle<CR>
+nnoremap <silent> T :TagbarToggle<CR>
 
 "Centering
 nmap n nzz
@@ -98,13 +103,13 @@ vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
 " Ag
-nnoremap <leader>a :Ag
+nnoremap <leader>a :Ag<space>
 
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
 
 " emmet
-nmap <leader>f <C-y>,
+nmap <leader>e <C-y>,
 
 " ABBR
 iabbr flase false

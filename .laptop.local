@@ -2,7 +2,7 @@
 brew unlink brew-cask
 
 brew tap caskroom/cask
-brew install brew-cask
+brew_install_or_upgrade 'brew-cask'
 
 brew link brew-cask
 
@@ -14,6 +14,7 @@ brew cask install google-chrome
 # gem install parity
 
 brew_install_or_upgrade 'watch'
+brew_install_or_upgrade 'googlecl'
 brew reinstall openssl
 rcup
 brew doctor

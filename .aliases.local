@@ -1,3 +1,6 @@
+alias fuck='eval $(thefuck $(fc -ln -1))'
+alias FUCK='fuck'
+
 alias betty="/Users/albertorocha/Dropbox/code/betty/main.rb"
 alias mongodbstart='mongod --dbpath ~/data/db'
 alias phone='cordova emulate ios --target="iPhone-4s"'
@@ -5,6 +8,7 @@ alias temp='~/../../Applications/TemperatureMonitor.app/Contents/MacOS/tempmonit
 alias dot='~/dotfiles-local/'
 alias la='ls -faF'
 alias laptopUpdate='sh ~/mac 2>&1 | tee ~/laptop.log'
+alias rds='spring rake db:reset'
 alias rc='spring rails console'
 alias rs='spring rails server'
 alias rdd='spring rake db:drop'
@@ -14,7 +18,7 @@ alias rr='spring rake routes'
 alias rg='spring rails generate'
 
 alias ga='git add -A'
-alias gcm='git commit -m'
+alias gc='git commit -v'
 alias gmaster='git push -u origin master'
 alias gf='git fetch && g'
 alias ggpull='git pull origin $(current_branch)'
