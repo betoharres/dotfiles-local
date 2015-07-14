@@ -1,14 +1,20 @@
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+let g:airline_theme='bubblegum'
 let g:airline_powerline_fonts = 1
 let g:gist_open_browser_after_post = 1
 let g:gist_clip_command = 'pbcopy'
 let g:nerdtree_tabs_open_on_console_startup = 1
 let g:nerdtree_tabs_smart_startup_focus = 1
+let g:ctrlp_max_files = 0
 set timeout timeoutlen=1000 ttimeoutlen=100 "Read keys faster
+set clipboard=unnamed
 set laststatus=2 "Always powrline enabled
-set cursorline
-let g:airline_theme='bubblegum'
+" set cursorline
+set nocursorcolumn
+set nocursorline
+set norelativenumber
+syntax sync minlines=256
 
 " Life saver
 nnore ; :
@@ -38,21 +44,16 @@ nmap <Leader>p "+p
 " Switch between two last files - remaping defaults config because I use easymotion
 nnoremap <leader>b <c-^>
 
-" experimental
 inoremap jk <esc>
-inoremap kj <esc>
 nmap <C-a> ggVG
-nmap J 18j
-vmap J 18j
-nmap K 18k
-vmap K 18k
+nmap J 5j
+vmap J 5j
+nmap K 5k
+vmap K 5k
 
 nnoremap <C-J> J
 
-" moving arrows to move lines
-"Up
 nno <C-K> ddkP
-"Down
 nno <C-J> ddp
 
 nnoremap <up> <C-w>k
@@ -80,10 +81,13 @@ nmap <Leader>0 0gt
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
+nmap <leader>j :CtrlP<CR>
+nnoremap V _v$h
+
 " ctags
 map <Leader>ct :!ctags -R --exclude=.git --exclude=log *<CR>
 set tags=./tags;
-nnoremap <leader>j :CtrlPTag<cr>
+nnoremap <leader>h :CtrlPTag<cr>
 nnoremap <silent> T :TagbarToggle<CR>
 
 "Centering
@@ -110,6 +114,9 @@ nnoremap <F5> :GundoToggle<CR>
 
 " emmet
 nmap <leader>e <C-y>,
+
+" Dash
+nmap <leader>d :Dash<CR>
 
 " ABBR
 iabbr flase false
