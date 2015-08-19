@@ -1,5 +1,7 @@
 alias fuck='eval $(thefuck $(fc -ln -1))'
 alias FUCK='fuck'
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO'
 
 alias betty="/Users/albertorocha/Dropbox/code/betty/main.rb"
 alias mongodbstart='mongod --dbpath ~/data/db'
