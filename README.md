@@ -8,6 +8,4 @@ Follow these steps: <br />
 4. and: ``$ find ~/dotfiles-local -name "*.local" -exec bash -c 'ln -s $0 ~/' {} \;``<br />
 
 ## Custom changes
-* ``$ gc Blah blah blah`` alias to: ``git commit -m "Blah blah blah"``( use
-alias ``gcm ""`` to use non letters characters).
 * Adds git status in your prompt. Something like ``(master|✖2✚3)``
