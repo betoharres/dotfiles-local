@@ -12,9 +12,8 @@ source $(brew --prefix nvm)/nvm.sh
 bindkey "^x" vi-cmd-mode
 
 function gheroku() {git add -A && git commit -m "$*" && git push heroku master;}
-# function gc() {git commit -m "$*";}
 function gca() {git add -A && git commit -m "$*";}
-function rgc() {git commit --amend -m "$*";}
+function gcamend() {git commit --amend -m "$*";}
 function gcp() {git add -A && git commit -m "$*" && git push;}
 function grr() {spring rake routes | grep  "$*";}
 function ch() { cd ~/Dropbox/Apps/Heroku/$1; }
@@ -34,8 +33,6 @@ fancy-ctrl-z () {
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
-# YADR
-# (f)ind by (n)ame
 # usage: fn foo
 # to find all files containing 'foo' in the name
 function fn() { ls **/*$1* }
