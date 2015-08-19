@@ -10,9 +10,6 @@ brew cask install java
 brew cask install dropbox
 brew cask install google-chrome
 
-# gem install suspenders
-# gem install parity
-
 brew_install_or_upgrade 'watch'
 brew_install_or_upgrade 'googlecl'
 brew_install_or_upgrade 'android-ndk'
@@ -21,4 +18,5 @@ brew_install_or_upgrade 'python'
 brew_install_or_upgrade 'npm'
 brew reinstall openssl
 rcup
+npm update -g
 brew doctor
