@@ -119,6 +119,7 @@ nmap <leader>e <C-y>,
 nmap <leader>d :Dash<CR>
 
 " ABBR
+iabbr putaria ( ͡° ͜ʖ ͡°)
 iabbr flase false
 iabbr ture true
 iabbr ned end
