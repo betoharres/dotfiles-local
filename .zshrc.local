@@ -11,6 +11,8 @@ source $(brew --prefix nvm)/nvm.sh
 # Changes VI mode to CRTL-X instead of CTRL-F
 bindkey "^x" vi-cmd-mode
 
+function youtube-mp3() { youtube-dl --extract-audio --audio-format mp3 $1; }
+
 function gheroku() {git add -A && git commit -m "$*" && git push heroku master;}
 function gca() {git add -A && git commit -m "$*";}
 function gcamend() {git commit --amend -m "$*";}
