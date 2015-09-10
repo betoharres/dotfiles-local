@@ -5,6 +5,7 @@ let g:airline_powerline_fonts = 1
 let g:gist_open_browser_after_post = 1
 let g:gist_clip_command = 'pbcopy'
 let g:nerdtree_tabs_open_on_console_startup = 1
+let NERDTreeQuitOnOpen = 1
 let g:nerdtree_tabs_smart_startup_focus = 1
 let g:ctrlp_max_files = 0
 set timeout timeoutlen=1000 ttimeoutlen=100 "Read keys faster
