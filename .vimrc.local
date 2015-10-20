@@ -1,6 +1,6 @@
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-let g:airline_theme='bubblegum'
+let g:airline_theme='ubaryd'
 let g:airline_powerline_fonts = 1
 let g:gist_open_browser_after_post = 1
 let g:gist_clip_command = 'pbcopy'
@@ -9,7 +9,6 @@ let NERDTreeQuitOnOpen = 1
 let g:nerdtree_tabs_smart_startup_focus = 1
 let g:ctrlp_max_files = 0
 set timeout timeoutlen=1000 ttimeoutlen=100 "Read keys faster
-set clipboard=unnamed
 set laststatus=2 "Always powrline enabled
 " set cursorline
 set nocursorcolumn
@@ -21,10 +20,19 @@ syntax sync minlines=256
 nnore ; :
 vnore ; :
 
+" Edit .vimrc
+nmap <leader>b :tabnew ~/.vimrc.bundles.local<cr>
+nmap <leader>v :tabnew ~/.vimrc.local<cr>
+nmap <leader>z :tabnew ~/.zshrc.local<cr>
+
 "switch panes
 nmap , <C-W><C-W>
-nmap <leader>f <C-w>_<C-w><bar>
-nmap <leader>F <C-w>=
+
+" Expand pane
+nmap <leader>+ <C-w>_<C-w><bar>
+
+" Equalize panes
+nmap <leader>= <C-w>=
 
 "Fugitive
 nmap <leader>gs :Gstatus<CR>
@@ -35,6 +43,10 @@ nmap <leader>gp :Gpush<CR>
 nmap <leader>gb :Gblame<CR>
 nmap <leader>gv :Gvsplit<CR>
 
+" fzf git
+nmap <leader>c :BCommits
+nmap <leader>C :Commits
+
 " Too old for this shit
 noremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
@@ -43,30 +55,36 @@ vmap <Leader>d "+d
 nmap <Leader>p "+p
 
 " Switch between two last files - remaping defaults config because I use easymotion
-nnoremap <leader>b <c-^>
+nnoremap <leader>h <c-^>
 
+" Go to Normal mode
 inoremap jk <esc>
-nmap <C-a> ggVG
+
+" Visal all content in the file
+nmap <C-a> ggVG$
+
+" Navigate through files easier
 nmap J 5j
 vmap J 5j
 nmap K 5k
 vmap K 5k
 
-nnoremap <C-J> J
-
+" Move lines up and down
 nno <C-K> ddkP
 nno <C-J> ddp
 
+" Move through panes
 nnoremap <up> <C-w>k
 nnoremap <down> <C-w>j
 nnoremap <left> <C-w>h
 nnoremap <right> <C-w>l
-""
 
+" Tab navigation
 nmap <Leader><Tab> :tabnew<CR>
 nmap M :tabprevious<CR>
 nmap m :tabnext<CR>
 
+" Tabs number using leader
 nmap <Leader>1 1gt
 nmap <Leader>2 2gt
 nmap <Leader>3 3gt
@@ -82,21 +100,18 @@ nmap <Leader>0 0gt
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
-nmap <leader>j :CtrlP<CR>
+nmap <leader>j :FZF<CR>
 nnoremap V _v$h
 
 " ctags
 map <Leader>ct :!ctags -R --exclude=.git --exclude=log *<CR>
 set tags=./tags;
-nnoremap <leader>h :CtrlPTag<cr>
+" nnoremap <leader>h :CtrlPTag<cr> " not using right now
 nnoremap <silent> T :TagbarToggle<CR>
 
 "Centering
 nmap n nzz
 nmap N Nzz
-nmap } }zz
-nmap { {zz
-
 
 " makes your life easier
 no L $
@@ -108,19 +123,27 @@ vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
 " Ag
-nnoremap <leader>a :Ag<space>
+nnoremap <leader>a :Ag<cr>
 
 " Gundo
-nnoremap <F5> :GundoToggle<CR>
+nnoremap <leader>u :GundoToggle<CR>
 
 " emmet
 nmap <leader>e <C-y>,
 
 " Dash
-nmap <leader>d :Dash<CR>
+" nmap <leader>d :Dash<CR>
 
-" ABBR
-iabbr putaria ( ͡° ͜ʖ ͡°)
+" Remove trailing whitespace
+function! StripWhitespace()
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+    :%s/\s\+$//e
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
+endfunction
+noremap <leader>ss :call StripWhitespace()<CR>
+
 iabbr flase false
 iabbr ture true
 iabbr ned end
@@ -130,36 +153,3 @@ iabbr nwe new
 iabbr uesr user
 iabbr calss class
 iabbr myemail albertohrocha@gmail.com
-
-let g:syntastic_html_tidy_blocklevel_tags = [
-  \'ion-checkbox',
-  \'ion-content',
-  \'ion-delete-button',
-  \'ion-footer-bar',
-  \'ion-header-bar',
-  \'ion-infinite-scroll',
-  \'ion-item',
-  \'ion-list',
-  \'ion-modal-view',
-  \'ion-nav-back-button',
-  \'ion-nav-bar',
-  \'ion-nav-buttons',
-  \'ion-nav-view',
-  \'ion-option-button',
-  \'ion-pane',
-  \'ion-popover-view',
-  \'ion-radio',
-  \'ion-refresher',
-  \'ion-reorder-button',
-  \'ion-scroll',
-  \'ion-side-menu',
-  \'ion-side-menus',
-  \'ion-side-menu-content',
-  \'ion-slide',
-  \'ion-slide-box',
-  \'ion-tab',
-  \'ion-tabs',
-  \'ion-toggle',
-  \'ion-view',
-  \'on-release',
-  \]
