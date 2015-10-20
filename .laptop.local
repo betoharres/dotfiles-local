@@ -18,5 +18,4 @@ brew_install_or_upgrade 'python'
 brew_install_or_upgrade 'npm'
 brew reinstall openssl
 rcup
-npm update -g
 brew doctor
