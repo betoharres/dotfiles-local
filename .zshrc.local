@@ -1,17 +1,15 @@
-source ~/.profile
-
 # recommended by brew doctor
 export PATH="$HOME/.bin:$PATH"
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="$PATH:/usr/local/lib/node_modules"
 export PATH="$GOPATH/bin:$PATH"
-export PATH="$PATH:/Users/albertorocha/otto-bin"
-export PATH="$PATH:/Users/albertorocha/gort-bin"
+export PATH="$PATH:/Users/albertorocha/bin"
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export FZF_COMPLETION_TRIGGER='(('
 export FZF_DEFAULT_OPTS="--history=$HOME/.fzf_history"
+export GOPATH="$HOME/go"
 
-source $(brew --prefix nvm)/nvm.sh
+# source $(brew --prefix nvm)/nvm.sh
 
 # Changes VI mode to CRTL-X instead of CTRL-F
 bindkey "^x" vi-cmd-mode
@@ -27,6 +25,20 @@ function ch() { cd ~/Dropbox/Apps/Heroku/$1; }
 function c() { cd ~/Dropbox/code/$1; }
 function h() { cd ~/$1; }
 function top10cmd() {print -l -- ${(o)history%% *} | uniq -c | sort -nr | head -n 10;}
+
+CURRENT_BG='NONE'
+SEGMENT_SEPARATOR_RIGHT='\ue0b2'
+prompt_segment_right() {
+  local bg fg
+  [[ -n $1 ]] && bg="%K{$1}" || bg="%k"
+  [[ -n $2 ]] && fg="%F{$2}" || fg="%f"
+    echo -n "%K{$CURRENT_BG}%F{$1}$SEGMENT_SEPARATOR_RIGHT%{$bg%}%{$fg%} "
+  CURRENT_BG=$1
+  [[ -n $3 ]] && echo -n $3
+}
+prompt_time() {
+  prompt_segment_right white black '%D{%H:%M:%S} '
+}
 
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
@@ -67,3 +79,4 @@ eval "$(rbenv init - zsh --no-rehash)"
 LC_CTYPE=en_US.UTF-8
 LC_ALL=en_US.UTF-8
 eval "$(rbenv init - --no-rehash zsh)"
+RPROMPT='%{%f%b%k%}%D{%H:%M:%S}'

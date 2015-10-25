@@ -1,21 +1,23 @@
 #!/bin/sh
-brew unlink brew-cask
-
+# brew unlink brew-cask
+#
 brew tap caskroom/cask
 brew_install_or_upgrade 'brew-cask'
-
-brew link brew-cask
+#
+# brew link brew-cask
 
 brew cask install java
 brew cask install dropbox
 brew cask install google-chrome
 
 brew_install_or_upgrade 'watch'
-brew_install_or_upgrade 'googlecl'
+# brew_install_or_upgrade 'googlecl'
 brew_install_or_upgrade 'android-ndk'
 brew_install_or_upgrade 'android-sdk'
 brew_install_or_upgrade 'python'
 brew_install_or_upgrade 'npm'
+brew_install_or_upgrade 'httpie'
+brew_install_or_upgrade 'youtube-dl'
 brew reinstall openssl
 rcup
 brew doctor

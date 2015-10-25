@@ -1,5 +1,4 @@
-alias fuck='eval $(thefuck $(fc -ln -1))'
-alias FUCK='fuck'
+alias glances='glances --theme-white'
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO'
 
