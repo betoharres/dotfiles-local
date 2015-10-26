@@ -18,6 +18,7 @@ brew_install_or_upgrade 'python'
 brew_install_or_upgrade 'npm'
 brew_install_or_upgrade 'httpie'
 brew_install_or_upgrade 'youtube-dl'
+brew_install_or_upgrade 'nvm'
 brew reinstall openssl
 rcup
 brew doctor
