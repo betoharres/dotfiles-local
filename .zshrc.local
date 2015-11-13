@@ -1,5 +1,5 @@
 export PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_super_status) %# '
-RPROMPT='%{%f%b%k%}%D{%H:%M:%S}'
+RPROMPT='%{%f%b%k%}%D{%H:%M}'
 
 # recommended by brew doctor
 export PATH="$HOME/.bin:$PATH"
@@ -15,6 +15,7 @@ export NVM_DIR=~/.nvm
 
 source ~/dotfiles-local/zsh-git-prompt/zshrc.sh
 source $(brew --prefix nvm)/nvm.sh
+source ~/.iterm2_shell_integration.`basename $SHELL`
 
 function youtube-mp3() { youtube-dl --extract-audio --audio-format mp3 $1; }
 function gheroku() {git add -A && git commit -m "$*" && git push heroku master;}
