@@ -13,6 +13,11 @@ export FZF_DEFAULT_OPTS="--history=$HOME/.fzf_history"
 export GOPATH="$HOME/go"
 export NVM_DIR=~/.nvm
 
+export DOCKER_HOST=tcp://192.168.99.100:2376
+export DOCKER_CERT_PATH=/Users/albertorocha/.docker/machine/machines/dinghy
+export DOCKER_TLS_VERIFY=1
+export DOCKER_MACHINE_NAME=dinghy
+
 source ~/dotfiles-local/zsh-git-prompt/zshrc.sh
 source $(brew --prefix nvm)/nvm.sh
 source ~/.iterm2_shell_integration.`basename $SHELL`
@@ -66,3 +71,4 @@ LC_CTYPE=en_US.UTF-8
 LC_ALL=en_US.UTF-8
 
 eval "$(hub alias -s)"
+eval "$(rbenv init - --no-rehash zsh)"
