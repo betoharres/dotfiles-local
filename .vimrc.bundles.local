@@ -1,4 +1,6 @@
-" Plugin 'rizzatti/dash.vim'
+" Plug 'rizzatti/dash.vim'
+Plug 'msanders/snipmate.vim'
+Plug 'justinj/vim-react-snippets'
 Plug 'acarapetis/vim-colors-github'
 Plug 'Lokaltog/vim-powerline'
 Plug 'stephenmckinney/vim-solarized-powerline'
