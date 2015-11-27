@@ -58,8 +58,8 @@ vmap <Leader>y "+y
 vmap <Leader>d "+d
 nmap <Leader>p "+p
 
-" Switch between two last files - remaping defaults config because I use easymotion
-nnoremap m <c-^>
+" Switch between two last files
+nnoremap <leader>h <c-^>
 
 " Go to Normal mode
 inoremap jk <esc>
@@ -105,6 +105,8 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
 nmap <leader>j :FZF<CR>
+
+nmap m <Plug>(easymotion-prefix)
 
 " ctags
 map <Leader>ct :!ctags -R --exclude=.git --exclude=log *<CR>
