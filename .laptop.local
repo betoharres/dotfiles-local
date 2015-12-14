@@ -1,5 +1,5 @@
 #!/bin/sh
-# brew unlink brew-cask
+brew unlink brew-cask
 #
 brew tap caskroom/cask
 brew_install_or_upgrade 'brew-cask'
