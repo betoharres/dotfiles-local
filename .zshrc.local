@@ -72,3 +72,4 @@ LC_ALL=en_US.UTF-8
 
 eval "$(hub alias -s)"
 eval "$(rbenv init - --no-rehash zsh)"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
