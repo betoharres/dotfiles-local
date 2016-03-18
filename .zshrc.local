@@ -5,23 +5,21 @@ RPROMPT='%{%f%b%k%}%D{%H:%M}'
 export PATH="$HOME/.bin:$PATH"
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="$PATH:/usr/local/lib/node_modules"
-export PATH="$GOPATH/bin:$PATH"
 export PATH="$PATH:/Users/albertorocha/bin"
+export PATH="$PATH:/usr/local/opt/go/libexec/bin"
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export FZF_COMPLETION_TRIGGER='(('
 export FZF_DEFAULT_OPTS="--history=$HOME/.fzf_history"
-export GOPATH="$HOME/go"
 export NVM_DIR=~/.nvm
 
-export DOCKER_HOST=tcp://192.168.99.100:2376
-export DOCKER_CERT_PATH=/Users/albertorocha/.docker/machine/machines/dinghy
-export DOCKER_TLS_VERIFY=1
-export DOCKER_MACHINE_NAME=dinghy
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
 
 source ~/dotfiles-local/zsh-git-prompt/zshrc.sh
 source $(brew --prefix nvm)/nvm.sh
 source ~/.iterm2_shell_integration.`basename $SHELL`
 
+function dcc() { docker-compose $*; }
 function youtube-mp3() { youtube-dl --extract-audio --audio-format mp3 $1; }
 function gheroku() {git add -A && git commit -m "$*" && git push heroku master;}
 function gca() {git add -A && git commit -m "$*";}
@@ -72,4 +70,5 @@ LC_ALL=en_US.UTF-8
 
 eval "$(hub alias -s)"
 eval "$(rbenv init - --no-rehash zsh)"
+eval "$(docker-machine env default)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
