@@ -1,9 +1,25 @@
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-colorscheme github
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
+colorscheme seoul256-light
+let g:seoul256_background = 255
+set background=light
+set nocursorcolumn
+set cursorline
+highlight CursorLine ctermbg=254
 
+set norelativenumber
+syntax sync minlines=256
+set timeout timeoutlen=1000 ttimeoutlen=100 "Read keys faster
+set laststatus=2 "Always powrline enabled
+
+" quickscope config
+let g:qs_first_occurrence_highlight_color = 1
+let g:qs_second_occurrence_highlight_color = 100
+
+let g:auto_save = 1
+let g:rspec_runner = "os_x_iterm2"
 let g:airline_theme='ubaryd'
 let g:airline_powerline_fonts = 1
 let g:gist_open_browser_after_post = 1
@@ -12,22 +28,61 @@ let g:nerdtree_tabs_open_on_console_startup = 1
 let NERDTreeQuitOnOpen = 1
 let g:nerdtree_tabs_smart_startup_focus = 1
 let g:ctrlp_max_files = 0
-set timeout timeoutlen=1000 ttimeoutlen=100 "Read keys faster
-set laststatus=2 "Always powrline enabled
-" set cursorline
-set nocursorcolumn
-set nocursorline
-set norelativenumber
-syntax sync minlines=256
+let g:jsx_ext_required = 0
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<S-TAB>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+"Fzf key binding
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-i': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" Go to Normal mode
+inoremap jk <esc>
+
+" Too old for this shit
+noremap <Leader>w :w<CR>
+nnoremap <Leader>q :q<CR>
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
 
 " Life saver
 nnore ; :
 vnore ; :
+no L $
+vno L $h
+no H _
+nnoremap V _v$h
+
+" Navigate through files easier
+nmap J 5j
+vmap J 5j
+nmap K 5k
+vmap K 5k
+
+"Centering
+nmap n nzz
+nmap N Nzz
+
+" Visual all content in the file
+nmap vA ggVG$
+
+" Move lines up and down
+nno <C-K> ddkP
+nno <C-J> ddp
 
 " Edit .vimrc
-nmap <leader>b :tabnew ~/.vimrc.bundles.local<cr>
+nmap <leader>B :tabnew ~/.vimrc.bundles.local<cr>
+nmap <leader>Z :tabnew ~/.zshrc.local<cr>
 nmap <leader>v :tabnew ~/.vimrc.local<cr>
-nmap <leader>z :tabnew ~/.zshrc.local<cr>
 
 "switch panes
 nmap , <C-W><C-W>
@@ -48,81 +103,40 @@ nmap <leader>gb :Gblame<CR>
 nmap <leader>gv :Gvsplit<CR>
 
 " fzf git
-nmap <leader>c :BCommits
-nmap <leader>C :Commits
-
-" Too old for this shit
-noremap <Leader>w :w<CR>
-nnoremap <Leader>q :q<CR>
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-nmap <Leader>p "+p
-
-" Switch between two last files
-nnoremap <leader>h <c-^>
-
-" Go to Normal mode
-inoremap jk <esc>
-
-" Visal all content in the file
-nmap <C-a> ggVG$
-
-" Navigate through files easier
-nmap J 5j
-vmap J 5j
-nmap K 5k
-vmap K 5k
-
-" Move lines up and down
-nno <C-K> ddkP
-nno <C-J> ddp
+nmap <leader>c :BCommits<cr>
+nmap <leader>C :Commits<cr>
+nmap <leader>/ :BLines<cr>
+nmap <leader>b :Windows<cr>
 
 " Move through panes
-nnoremap <up> <C-w>k
-nnoremap <down> <C-w>j
-nnoremap <left> <C-w>h
-nnoremap <right> <C-w>l
+nnoremap <up> <C-w>+
+nnoremap <down> <C-w>-
+nnoremap <left> <C-w>>
+nnoremap <right> <C-w><
 
 " Tab navigation
 nmap <Leader><Tab> :tabnew<CR>
 nmap <S-Tab> :tabprevious<CR>
 nmap <Tab>  :tabnext<CR>
 
-" Tabs number using leader
-nmap <Leader>1 1gt
-nmap <Leader>2 2gt
-nmap <Leader>3 3gt
-nmap <Leader>4 4gt
-nmap <Leader>5 5gt
-nmap <Leader>6 6gt
-nmap <Leader>7 7gt
-nmap <Leader>8 8gt
-nmap <Leader>9 9gt
-nmap <Leader>0 0gt
-
 " NERDTree
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
+" Open fuzzy finder files(faster than ctrlP)
 nmap <leader>j :FZF<CR>
 
-nmap m <Plug>(easymotion-prefix)
+" easy motion keybinding
+nmap f <Plug>(easymotion-prefix)f
+nmap F <Plug>(easymotion-prefix)F
 
 " ctags
 map <Leader>ct :!ctags -R --exclude=.git --exclude=log *<CR>
 set tags=./tags;
+
 " nnoremap <leader>h :CtrlPTag<cr> " not using right now
 nnoremap <silent> T :TagbarToggle<CR>
 
-"Centering
-nmap n nzz
-nmap N Nzz
-
-" makes your life easier
-no L $
-vno L $h
-no H _
-nnoremap V _v$h
 
 " Expand Region
 vmap v <Plug>(expand_region_expand)
@@ -136,9 +150,6 @@ nnoremap <leader>u :GundoToggle<CR>
 
 " emmet
 nmap <leader>e <C-y>,
-
-" Dash
-" nmap <leader>d :Dash<CR>
 
 " Remove trailing whitespace
 function! StripWhitespace()
@@ -158,4 +169,5 @@ iabbr dfe def
 iabbr nwe new
 iabbr uesr user
 iabbr calss class
+iabbr (0 ()
 iabbr myemail albertohrocha@gmail.com
