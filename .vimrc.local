@@ -65,10 +65,10 @@ no H _
 nnoremap V _v$h
 
 " Navigate through files easier
-nmap J 5j
-vmap J 5j
-nmap K 5k
-vmap K 5k
+nmap J 4j
+vmap J 4j
+nmap K 4k
+vmap K 4k
 
 "Centering
 nmap n nzz
