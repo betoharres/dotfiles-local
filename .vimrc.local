@@ -156,9 +156,6 @@ vmap <C-v> <Plug>(expand_region_shrink)
 " Ag
 nnoremap <leader>a :Ag<cr>
 
-" Gundo
-nnoremap <leader>u :GundoToggle<CR>
-
 " emmet
 nmap <leader>e <C-y>,
 
