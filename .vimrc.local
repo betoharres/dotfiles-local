@@ -104,6 +104,13 @@ nmap <leader>gp :Gpush<CR>
 nmap <leader>gb :Gblame<CR>
 nmap <leader>gv :Gvsplit<CR>
 
+" Git Gutter
+nmap <leader>G :GitGutterLineHighlightsToggle<CR>
+nmap } :GitGutterNextHunk<CR>
+nmap { :GitGutterPrevHunk<CR>
+nmap <Leader>sh <Plug>GitGutterStageHunk
+nmap <Leader>rh <Plug>GitGutterRevertHunk
+
 " fzf git
 nmap <leader>c :BCommits<cr>
 nmap <leader>C :Commits<cr>
