@@ -28,6 +28,7 @@ let g:gist_clip_command = 'pbcopy'
 let g:nerdtree_tabs_open_on_console_startup = 1
 let NERDTreeQuitOnOpen = 1
 let g:nerdtree_tabs_smart_startup_focus = 1
+let NERDTreeShowHidden = 1
 let g:ctrlp_max_files = 0
 let g:jsx_ext_required = 0
 
