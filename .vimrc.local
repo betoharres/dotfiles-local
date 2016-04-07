@@ -19,6 +19,7 @@ let g:qs_first_occurrence_highlight_color = 1
 let g:qs_second_occurrence_highlight_color = 100
 
 let g:auto_save = 1
+let g:auto_save_in_insert_mode = 0
 let g:rspec_runner = "os_x_iterm2"
 let g:airline_theme='ubaryd'
 let g:airline_powerline_fonts = 1
