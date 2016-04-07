@@ -159,6 +159,8 @@ nnoremap <leader>a :Ag<cr>
 " emmet
 nmap <leader>e <C-y>,
 
+nnoremap <silent><expr> <Leader>H (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
+
 " Remove trailing whitespace
 function! StripWhitespace()
     let save_cursor = getpos(".")
