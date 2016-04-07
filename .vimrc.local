@@ -136,6 +136,8 @@ nnoremap <C-f> :NERDTreeFind<CR>
 nmap <leader>j :FZF<CR>
 
 " easy motion keybinding
+nmap m <Plug>(easymotion-prefix)
+" Remap 'f' key to use easy motion(it works accross lines)
 nmap f <Plug>(easymotion-prefix)f
 nmap F <Plug>(easymotion-prefix)F
 
