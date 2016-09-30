@@ -1,3 +1,4 @@
+alias ll="gls -la --color --group-directories-first"
 alias rspec='bundle exec rspec'
 alias dm='docker-machine'
 alias del-images='docker rmi $(docker images -f "dangling=true" -q)'
