@@ -2,12 +2,12 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
+highlight CursorLine ctermbg=254
 colorscheme seoul256-light
 let g:seoul256_background = 255
 set background=light
 set nocursorcolumn
 set cursorline
-highlight CursorLine ctermbg=254
 
 set norelativenumber
 syntax sync minlines=256
@@ -18,8 +18,6 @@ set laststatus=2 "Always powrline enabled
 let g:qs_first_occurrence_highlight_color = 1
 let g:qs_second_occurrence_highlight_color = 100
 
-let g:auto_save = 1
-let g:auto_save_in_insert_mode = 0
 let g:rspec_runner = "os_x_iterm2"
 let g:airline_theme='ubaryd'
 let g:airline_powerline_fonts = 1
@@ -30,7 +28,10 @@ let NERDTreeQuitOnOpen = 1
 let g:nerdtree_tabs_smart_startup_focus = 1
 let NERDTreeShowHidden = 1
 let g:ctrlp_max_files = 0
-let g:jsx_ext_required = 0
+
+" JSX lint
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_checkers = ['standard']
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<S-TAB>"
@@ -40,7 +41,10 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-"Fzf key binding
+" pangloss/vim-javascript
+let g:javascript_enable_domhtmlcss = 1
+
+"Fzf key customization
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-i': 'split',
@@ -53,8 +57,7 @@ inoremap jk <esc>
 noremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 vmap <Leader>y "+y
-vmap <Leader>d "+d
-nmap <Leader>p "+p
+nmap <Leader>p "+P
 
 " Life saver
 nnore ; :
@@ -65,17 +68,17 @@ no H _
 nnoremap V _v$h
 
 " Navigate through files easier
-nmap J 4j
-vmap J 4j
-nmap K 4k
-vmap K 4k
+" nmap J 4j
+" vmap J 4j
+" nmap K 4k
+" vmap K 4k
 
 "Centering
-nmap n nzz
-nmap N Nzz
+" nmap n nzz
+" nmap N Nzz
 
 " Visual all content in the file
-nmap vA ggVG$
+nmap gv ggVG$
 
 " Move lines up and down
 nno <C-K> ddkP
@@ -106,22 +109,19 @@ nmap <leader>gv :Gvsplit<CR>
 
 " Git Gutter
 nmap <leader>G :GitGutterLineHighlightsToggle<CR>
-nmap } :GitGutterNextHunk<CR>
-nmap { :GitGutterPrevHunk<CR>
 nmap <Leader>sh <Plug>GitGutterStageHunk
 nmap <Leader>rh <Plug>GitGutterRevertHunk
 
 " fzf git
 nmap <leader>c :BCommits<cr>
 nmap <leader>C :Commits<cr>
-nmap <leader>/ :BLines<cr>
 nmap <leader>b :Windows<cr>
 
 " Move through panes
-nnoremap <up> <C-w>+
-nnoremap <down> <C-w>-
-nnoremap <left> <C-w>>
-nnoremap <right> <C-w><
+nnoremap <up> <C-w>-
+nnoremap <down> <C-w>+
+nnoremap <left> <C-w><
+nnoremap <right> <C-w>>
 
 " Tab navigation
 nmap <Leader><Tab> :tabnew<CR>
@@ -144,10 +144,7 @@ nmap F <Plug>(easymotion-prefix)F
 " ctags
 map <Leader>ct :!ctags -R --exclude=.git --exclude=log *<CR>
 set tags=./tags;
-
-" nnoremap <leader>h :CtrlPTag<cr> " not using right now
 nnoremap <silent> T :TagbarToggle<CR>
-
 
 " Expand Region
 vmap v <Plug>(expand_region_expand)
@@ -159,7 +156,7 @@ nnoremap <leader>a :Ag<cr>
 " emmet
 nmap <leader>e <C-y>,
 
-nnoremap <silent><expr> <Leader>H (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
+nnoremap <silent><expr> <Leader>h (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
 
 " Remove trailing whitespace
 function! StripWhitespace()
@@ -180,4 +177,4 @@ iabbr nwe new
 iabbr uesr user
 iabbr calss class
 iabbr (0 ()
-iabbr myemail albertohrocha@gmail.com
+iabbr )_ ()
