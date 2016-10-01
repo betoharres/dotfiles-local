@@ -1,5 +1,7 @@
 [alias]
   l = log --pretty=colored
+  shorty = status --short --branch
+  dsf = "!git diff --color $@ | diff-so-fancy"
 [pretty]
   colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
 [user]
