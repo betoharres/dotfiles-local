@@ -7,7 +7,6 @@ export PATH="$PATH:/usr/local/lib/node_modules"
 export PATH="$PATH:/Users/albertorocha/bin"
 export PATH="$PATH:/usr/local/opt/go/libexec/bin"
 export ANDROID_HOME=/usr/local/opt/android-sdk
-export FZF_COMPLETION_TRIGGER='(('
 export FZF_DEFAULT_OPTS="--history=$HOME/.fzf_history"
 export NVM_DIR=~/.nvm
 
@@ -24,7 +23,7 @@ source ~/.iterm2_shell_integration.`basename $SHELL`
 function dcc() { docker-compose $*; }
 function youtube-mp3() { youtube-dl --extract-audio --audio-format mp3 $1; }
 function gheroku() {git add -A && git commit -m "$*" && git push heroku master;}
-function c() { cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/code $1; }
+function c() { cd ~/code $1; }
 function h() { cd ~/$1; }
 function top10cmd() {print -l -- ${(o)history%% *} | uniq -c | sort -nr | head -n 10;}
 
@@ -75,3 +74,4 @@ LC_ALL=en_US.UTF-8
 eval "$(hub alias -s)"
 eval "$(rbenv init - --no-rehash zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="$PATH:`yarn global bin`"

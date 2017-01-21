@@ -50,8 +50,13 @@ let g:fzf_action = {
   \ 'ctrl-i': 'split',
   \ 'ctrl-v': 'vsplit' }
 
+" Navigation
+map <C-f> <C-f>zz
+map <C-b> <C-b>zz
+
 " Go to Normal mode
 inoremap jk <esc>
+inoremap jj <esc>
 
 " Too old for this shit
 noremap <Leader>w :w<CR>
@@ -67,15 +72,9 @@ vno L $h
 no H _
 nnoremap V _v$h
 
-" Navigate through files easier
-" nmap J 4j
-" vmap J 4j
-" nmap K 4k
-" vmap K 4k
-
 "Centering
-" nmap n nzz
-" nmap N Nzz
+nmap n nzz
+nmap N Nzz
 
 " Visual all content in the file
 nmap gv ggVG$
@@ -94,9 +93,6 @@ nmap , <C-W><C-W>
 
 " Expand pane
 nmap <leader>+ <C-w>_<C-w><bar>
-
-" Equalize panes
-nmap <leader>= <C-w>=
 
 "Fugitive
 nmap <leader>gs :Gstatus<CR>
@@ -120,8 +116,12 @@ nmap <leader>b :Windows<cr>
 " Move through panes
 nnoremap <up> <C-w>-
 nnoremap <down> <C-w>+
-nnoremap <left> <C-w><
-nnoremap <right> <C-w>>
+nnoremap <right> <C-w><
+nnoremap <left> <C-w>>
+
+" Equalize panes
+nmap <leader>= <C-w>=
+
 
 " Tab navigation
 nmap <Leader><Tab> :tabnew<CR>
@@ -130,7 +130,7 @@ nmap <Tab>  :tabnext<CR>
 
 " NERDTree
 nnoremap <C-n> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+nnoremap <Leader>n :NERDTreeFind<CR>
 
 " Open fuzzy finder files(faster than ctrlP)
 nmap <leader>j :FZF<CR>
