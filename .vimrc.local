@@ -1,11 +1,12 @@
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd BufReadPre *.js let b:javascript_lib_use_react = 1
 
-highlight NonText guibg=#060606
-highlight Folded  guibg=#0A0A0A guifg=#9090D0
-highlight CursorLine ctermbg=254
-colorscheme seoul256-light
-let g:seoul256_background = 255
-set background=light
+" for vim 8
+if (has("termguicolors"))
+ set termguicolors
+endif
+colorscheme OceanicNext
+
 set nocursorcolumn
 set cursorline
 
@@ -14,35 +15,36 @@ syntax sync minlines=256
 set timeout timeoutlen=1000 ttimeoutlen=100 "Read keys faster
 set laststatus=2 "Always powrline enabled
 
-" quickscope config
-let g:qs_first_occurrence_highlight_color = 1
-let g:qs_second_occurrence_highlight_color = 100
-
 let g:rspec_runner = "os_x_iterm2"
-let g:airline_theme='ubaryd'
+
+" Airline
+let g:airline_theme='oceanicnext'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
 let g:airline_powerline_fonts = 1
+
+" Gist
 let g:gist_open_browser_after_post = 1
 let g:gist_clip_command = 'pbcopy'
+
+" NERDTree
 let g:nerdtree_tabs_open_on_console_startup = 1
 let NERDTreeQuitOnOpen = 1
 let g:nerdtree_tabs_smart_startup_focus = 1
 let NERDTreeShowHidden = 1
-let g:ctrlp_max_files = 0
+
 
 " JSX lint
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_checkers = ['standard']
 
+" JSX syntax
+let g:jsx_ext_required = 0
+
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<S-TAB>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
-" pangloss/vim-javascript
-let g:javascript_enable_domhtmlcss = 1
 
 "Fzf key customization
 let g:fzf_action = {
@@ -72,7 +74,7 @@ vno L $h
 no H _
 nnoremap V _v$h
 
-"Centering
+" Centering after searching word
 nmap n nzz
 nmap N Nzz
 
@@ -104,14 +106,13 @@ nmap <leader>gb :Gblame<CR>
 nmap <leader>gv :Gvsplit<CR>
 
 " Git Gutter
-nmap <leader>G :GitGutterLineHighlightsToggle<CR>
 nmap <Leader>sh <Plug>GitGutterStageHunk
 nmap <Leader>rh <Plug>GitGutterRevertHunk
 
 " fzf git
 nmap <leader>c :BCommits<cr>
 nmap <leader>C :Commits<cr>
-nmap <leader>b :Windows<cr>
+nmap <leader>/ :Lines<cr>
 
 " Move through panes
 nnoremap <up> <C-w>-
@@ -133,18 +134,17 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <Leader>n :NERDTreeFind<CR>
 
 " Open fuzzy finder files(faster than ctrlP)
-nmap <leader>j :FZF<CR>
+nmap <leader>j :GFiles<CR>
 
 " easy motion keybinding
 nmap m <Plug>(easymotion-prefix)
-" Remap 'f' key to use easy motion(it works accross lines)
-nmap f <Plug>(easymotion-prefix)f
-nmap F <Plug>(easymotion-prefix)F
+nmap <leader>f <Plug>(easymotion-prefix)f
+nmap <leader>F <Plug>(easymotion-prefix)F
 
-" ctags
-map <Leader>ct :!ctags -R --exclude=.git --exclude=log *<CR>
-set tags=./tags;
-nnoremap <silent> T :TagbarToggle<CR>
+" ctags(probably need in the future)
+" map <Leader>ct :!ctags -R --exclude=.git --exclude=log *<CR>
+" set tags=./tags;
+" nnoremap <silent> T :TagbarToggle<CR>
 
 " Expand Region
 vmap v <Plug>(expand_region_expand)
@@ -155,8 +155,6 @@ nnoremap <leader>a :Ag<cr>
 
 " emmet
 nmap <leader>e <C-y>,
-
-nnoremap <silent><expr> <Leader>h (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
 
 " Remove trailing whitespace
 function! StripWhitespace()

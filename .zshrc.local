@@ -1,4 +1,4 @@
-export PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_super_status) %# '
+export PS1='${SSH_CONNECTION+"%{$fg_bold[blue]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_super_status) %# '
 RPROMPT='%{%f%b%k%}%D{%H:%M}'
 
 export PATH="$HOME/.bin:$PATH"
