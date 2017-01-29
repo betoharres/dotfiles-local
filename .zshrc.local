@@ -6,6 +6,7 @@ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="$PATH:/usr/local/lib/node_modules"
 export PATH="$PATH:/Users/albertorocha/bin"
 export PATH="$PATH:/usr/local/opt/go/libexec/bin"
+export PATH="$PATH:`yarn global bin`"
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export FZF_DEFAULT_OPTS="--history=$HOME/.fzf_history"
 export NVM_DIR=~/.nvm
@@ -20,18 +21,21 @@ source ~/dotfiles-local/zsh-git-prompt/zshrc.sh
 source $(brew --prefix nvm)/nvm.sh
 source ~/.iterm2_shell_integration.`basename $SHELL`
 
-function dcc() { docker-compose $*; }
-function youtube-mp3() { youtube-dl --extract-audio --audio-format mp3 $1; }
-function gheroku() {git add -A && git commit -m "$*" && git push heroku master;}
+# personal
 function c() { cd ~/code $1; }
 function h() { cd ~/$1; }
+function youtube-mp3() { youtube-dl --extract-audio --audio-format mp3 $1; }
 function top10cmd() {print -l -- ${(o)history%% *} | uniq -c | sort -nr | head -n 10;}
 
 # git commands
-function gca() {git add -A && git commit -m "$*";}
 function gcamend() {git commit --amend -m "$*";}
 function gcp() {git add -A && git commit -m "$*" && git push;}
 function grr() {spring rake routes | grep  "$*";}
+# heroku
+function gheroku() {git add -A && git commit -m "$*" && git push heroku master;}
+
+#docker
+function dcc() { docker-compose $*; }
 
 # hit CTRL + z to go to background and foreground
 fancy-ctrl-z () {
@@ -46,32 +50,9 @@ fancy-ctrl-z () {
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
-# usage: fn foo
-# to find all files containing 'foo' in the name
-function fn() { ls **/*$1* }
-
-# find all the files in the dir
-function f() { find *$1* }
-
-# Will return the current branch name
-# Usage example: git pull origin $(current_branch)
-#
-function current_branch() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || \
-  ref=$(git rev-parse --short HEAD 2> /dev/null) || return
-  echo ${ref#refs/heads/}
-}
-
-function current_repository() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || \
-  ref=$(git rev-parse --short HEAD 2> /dev/null) || return
-  echo $(git remote -v | cut -d':' -f 2)
-}
-
 LC_CTYPE=en_US.UTF-8
 LC_ALL=en_US.UTF-8
 
 eval "$(hub alias -s)"
 eval "$(rbenv init - --no-rehash zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="$PATH:`yarn global bin`"
