@@ -1,6 +1,9 @@
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 autocmd BufReadPre *.js let b:javascript_lib_use_react = 1
 
+" for vim 7
+set t_Co=256
+
 " for vim 8
 if (has("termguicolors"))
  set termguicolors

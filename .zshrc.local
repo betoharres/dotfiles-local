@@ -22,7 +22,7 @@ source $(brew --prefix nvm)/nvm.sh
 source ~/.iterm2_shell_integration.`basename $SHELL`
 
 # personal
-function c() { cd ~/code $1; }
+function c() { cd ~/code/"$*"; }
 function h() { cd ~/$1; }
 function youtube-mp3() { youtube-dl --extract-audio --audio-format mp3 $1; }
 function top10cmd() {print -l -- ${(o)history%% *} | uniq -c | sort -nr | head -n 10;}
