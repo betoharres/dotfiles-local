@@ -25,6 +25,8 @@ let g:airline_theme='oceanicnext'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline_powerline_fonts = 1
+let airline#extensions#tabline#tabs_label = ''
+let airline#extensions#tabline#show_splits = 0
 
 " Gist
 let g:gist_open_browser_after_post = 1
@@ -56,8 +58,8 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 
 " Navigation
-map <C-f> <C-f>zz
-map <C-b> <C-b>zz
+map <C-f> <C-f>
+map <C-b> <C-b>
 
 " Go to Normal mode
 inoremap jk <esc>
