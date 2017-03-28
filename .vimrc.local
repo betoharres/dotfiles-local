@@ -38,7 +38,6 @@ let NERDTreeQuitOnOpen = 1
 let g:nerdtree_tabs_smart_startup_focus = 1
 let NERDTreeShowHidden = 1
 
-
 " JSX lint
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_checkers = ['standard']
@@ -160,6 +159,8 @@ nnoremap <leader>a :Ag<cr>
 
 " emmet
 nmap <leader>e <C-y>,
+nnoremap <leader>E <esc>:call emmet#expandAbbr(0,"")<cr>h:call emmet#splitJoinTag()<cr>ww
+
 
 " Remove trailing whitespace
 function! StripWhitespace()
