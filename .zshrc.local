@@ -3,6 +3,7 @@ RPROMPT='%{%f%b%k%}%D{%H:%M}'
 
 export PATH="$HOME/.bin:$PATH"
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin:$PATH
 export PATH="$PATH:/usr/local/lib/node_modules"
 export PATH="$PATH:/Users/albertorocha/bin"
 export PATH="$PATH:/usr/local/opt/go/libexec/bin"
@@ -36,6 +37,10 @@ function gheroku() {git add -A && git commit -m "$*" && git push heroku master;}
 
 #docker
 function dcc() { docker-compose $*; }
+
+function makegif() {
+  ffmpeg -i "$1" -s "$2" -pix_fmt rgb24 -r 16 -f gif - | gifsicle --optimize=3 --delay=3 > out.gif
+}
 
 # hit CTRL + z to go to background and foreground
 fancy-ctrl-z () {
