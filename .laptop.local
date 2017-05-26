@@ -1,19 +1,17 @@
 #!/bin/sh
 
-brew cask install java
-brew cask install dropbox
-brew cask install google-chrome
+brew install watch
+brew install python
+brew install httpie
+brew install openconnect
+brew install youtube-dl
+brew install npm
+brew install nvm
+brew install openssl
 
-brew_install_or_upgrade 'watch'
-brew_install_or_upgrade 'android-ndk'
-brew_install_or_upgrade 'android-sdk'
-brew_install_or_upgrade 'python'
-brew_install_or_upgrade 'npm'
-brew_install_or_upgrade 'httpie'
-brew_install_or_upgrade 'openconnect'
-brew_install_or_upgrade 'youtube-dl'
-brew_install_or_upgrade 'nvm'
-brew reinstall openssl
 pip3 install --upgrade pip
+# gem_install_or_update nokogiri -- --with-xml2-include=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include/libxml2 --use-system-libraries
+gem_install_or_update 'rails'
+
 rcup
 brew doctor
