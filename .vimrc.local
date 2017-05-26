@@ -82,6 +82,9 @@ nnoremap V _v$h
 nmap n nzz
 nmap N Nzz
 
+" Use fzf.vim to search in current buffer
+nmap \ :BLines<cr>
+
 " Visual all content in the file
 nmap gv ggVG$
 
