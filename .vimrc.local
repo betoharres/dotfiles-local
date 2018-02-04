@@ -116,10 +116,16 @@ nmap <leader>gv :Gvsplit<CR>
 nmap <Leader>sh <Plug>GitGutterStageHunk
 nmap <Leader>rh <Plug>GitGutterRevertHunk
 
+nnoremap <expr> <CR> empty(&buftype) ? ':GitGutterNextHunk<CR>' : '<CR>'
+nnoremap <BS> :GitGutterPrevHunk<CR>
+nnoremap <leader>u :GitGutterUndoHunk<CR>
+
 " fzf git
-nmap <leader>c :BCommits<cr>
 nmap <leader>C :Commits<cr>
 nmap <leader>/ :Lines<cr>
+
+" fzf cmds
+nmap <leader>c :Commands<cr>
 
 " Move through panes
 nnoremap <up> <C-w>-
@@ -145,8 +151,7 @@ nmap <leader>j :GFiles<CR>
 
 " easy motion keybinding
 nmap m <Plug>(easymotion-prefix)
-nmap <leader>f <Plug>(easymotion-prefix)f
-nmap <leader>F <Plug>(easymotion-prefix)F
+nmap <leader>f <Plug>(easymotion-prefix)s
 
 " ctags(probably need in the future)
 " map <Leader>ct :!ctags -R --exclude=.git --exclude=log *<CR>

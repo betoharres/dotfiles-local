@@ -39,6 +39,9 @@ function gheroku() {git add -A && git commit -m "$*" && git push heroku master;}
 #docker
 function dcc() { docker-compose $*; }
 
+function gemidao() { gemidao-do-zap --de=519$1 --para=519$2 --token=76d904746ad54bc73687862474028d92; }
+function cpPronota () { cp -r ../pronota-frontend/app/containers/$1 src/containers && cp -r ../pronota-frontend/app/components/$1 src/components }
+
 function makegif() {
   ffmpeg -i "$1" -s "$2" -pix_fmt rgb24 -r 16 -f gif - | gifsicle --optimize=3 --delay=3 > out.gif
 }

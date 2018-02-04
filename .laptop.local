@@ -1,13 +1,13 @@
 #!/bin/sh
 
-brew install watch
-brew install python
-brew install httpie
-brew install openconnect
-brew install youtube-dl
-brew install npm
-brew install nvm
-brew install openssl
+# brew install watch
+# brew install python
+# brew install httpie
+# brew install openconnect
+# brew install youtube-dl
+# brew install npm
+# brew install nvm
+# brew install openssl
 
 pip3 install --upgrade pip
 # gem_install_or_update nokogiri -- --with-xml2-include=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include/libxml2 --use-system-libraries
