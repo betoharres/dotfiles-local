@@ -1,8 +1,8 @@
+#del-images=docker rmi $(docker images -f "dangling=true" -q)
 alias gs="g shorty"
 alias ll="gls -la --color --group-directories-first"
 alias rspec='bundle exec rspec'
 alias dm='docker-machine'
-# alias del-images='docker rmi $(docker images | grep '^<none>' | awk '{print $3}')'
 alias deleteBranches='git branch --merged | grep -v master | xargs git branch -d'
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO'
